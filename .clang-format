@@ -1,0 +1,42 @@
+# SmartModbus 代碼格式規範
+# 基於 LLVM 樣式並針對嵌入式 C 進行優化
+Language:        Cpp
+BasedOnStyle:    LLVM
+
+# 基礎縮排設定
+IndentWidth:     4
+TabWidth:        4
+UseTab:          Never # 嵌入式開發建議使用空格，避免不同編輯器顯示落差
+
+# 每行最大長度 (工業標準建議 80 或 100)
+ColumnLimit:     100
+
+# 指標對齊 (例如: uint8_t *data 而不是 uint8_t* data)
+PointerAlignment: Left
+
+# 強制大括號換行風格 (使用 Attach，讓程式碼更緊湊)
+BreakBeforeBraces: Attach
+
+# 結構體與陣列初始化對齊
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: false
+
+# 保持註解與代碼的間距
+SpacesBeforeTrailingComments: 2
+
+# 針對 C 語言的優化
+Standard:        c11
+
+# 排序 Include 檔案 (有助於維護依賴關係)
+SortIncludes:    true
+
+# 函數宣告與呼叫的參數排版
+AllowAllParametersOfDeclarationOnNextLine: false
+BinPackParameters: false
+
+# 允許短的函式或 if 語句放在同一行 (可視需求改為 None)
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: false
+
+---
